@@ -8,19 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.junior.projects.backendproject.formatosenvio.ConfiguracaoPermissaoFormatoEnvio;
-import com.junior.projects.backendproject.services.ConfiguracaoPermissaoService;
+
 
 @RestController
-@RequestMapping("configuracaoPermissao/")
-public class ConfiguracaoPermissaoController {
-
-	@Autowired
-	private ConfiguracaoPermissaoService configuracaoPermissaoService; 
+@RequestMapping("/requisitarEnvioArquivo")
+public class RequisitarEnvioArquivoController {
 	
-	@PostMapping("/adicionarPermissao")
-	public ResponseEntity<String> adicionarPermissao(@RequestBody ConfiguracaoPermissaoFormatoEnvio permissaoObject){
-		return configuracaoPermissaoService.adicionarPermissao(permissaoObject);
-	}
 	
 	
 }
