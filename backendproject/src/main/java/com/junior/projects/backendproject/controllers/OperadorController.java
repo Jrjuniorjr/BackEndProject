@@ -19,8 +19,11 @@ public class OperadorController {
 	private OperadorService operadorService;
 	
 	@PostMapping("/adicionarOperador")
-	public ResponseEntity<String> adicionarOperador(@RequestBody OperadorFormatoEnvio operadorFormatoEnvio){
+	public ResponseEntity<String> adicionarOperador(
+			@RequestBody OperadorFormatoEnvio operadorFormatoEnvio){
+		
 		return operadorService.salvarOperador(operadorFormatoEnvio);
+	
 	}
 	
 	@PostMapping("consultarOperador")

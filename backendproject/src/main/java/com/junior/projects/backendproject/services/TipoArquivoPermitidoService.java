@@ -36,4 +36,8 @@ public class TipoArquivoPermitidoService {
 	public List<TipoArquivoPermitido> listarTodostiposArquivosPermitidos(){
 		return iTipoArquivoPermitidoDAO.findAll();
 	}
+	
+	public TipoArquivoPermitido consultarTipoArquivo(String nomeTipoArquivo) {
+		return iTipoArquivoPermitidoDAO.findByNomeTipoArquivo(nomeTipoArquivo);
+	}
 }

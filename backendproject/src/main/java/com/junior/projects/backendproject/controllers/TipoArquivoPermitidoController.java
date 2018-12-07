@@ -19,13 +19,20 @@ public class TipoArquivoPermitidoController {
 	private TipoArquivoPermitidoService tipoArquivoPermitidoService;
 	
 	@PostMapping("/adicionarTipoArquivoPermitido")
-	public ResponseEntity<String> adicionarTipoAplicacaoPermitido(@RequestBody TipoArquivoFormatoEnvio tipoArquivoFormatoEnvio){
+	public ResponseEntity<String> adicionarTipoAplicacaoPermitido(
+			@RequestBody TipoArquivoFormatoEnvio tipoArquivoFormatoEnvio){
+		
 		return tipoArquivoPermitidoService.salvarTipoArquivoPermitido(tipoArquivoFormatoEnvio);
+	
 	}
 	
 	@GetMapping("/listarTodosTiposArquivos")
 	public ResponseEntity<List<TipoArquivoPermitido>> listarTodosArquivos(){
-		List<TipoArquivoPermitido> tiposArquivos = tipoArquivoPermitidoService.listarTodostiposArquivosPermitidos();
+		
+		List<TipoArquivoPermitido> tiposArquivos = tipoArquivoPermitidoService.
+				listarTodostiposArquivosPermitidos();
+	
 		return ResponseEntity.ok(tiposArquivos);
+	
 	}
 }

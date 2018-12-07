@@ -16,9 +16,9 @@ public class TipoArquivoPermitido {
 	@Column (name = "nomeTipoArquivoPermitido")
 	private String nomeTipoArquivoPermitido;
 	
-	@Enumerated(EnumType.STRING)
-	@Column(name="tipo", columnDefinition="enum('Ativo', 'Inativo')")
-	private StatusAtivacao statusAtivacao;
+
+	@JoinColumn(name = "idArquivo")
+	private Integer idArquivo;
 
 	public Integer getId() {
 		return id;
@@ -34,14 +34,14 @@ public class TipoArquivoPermitido {
 
 	public void setNomeTipoArquivoPermitido(String nomeTipoArquivoPermitido) {
 		this.nomeTipoArquivoPermitido = nomeTipoArquivoPermitido;
+	}	
+
+	public Integer getIdArquivo() {
+		return idArquivo;
 	}
 
-	public StatusAtivacao getStatusAtivacao() {
-		return statusAtivacao;
-	}
-
-	public void setStatusAtivacao(StatusAtivacao statusAtivacao) {
-		this.statusAtivacao = statusAtivacao;
+	public void setIdArquivo(Integer idArquivo) {
+		this.idArquivo = idArquivo;
 	}
 
 	

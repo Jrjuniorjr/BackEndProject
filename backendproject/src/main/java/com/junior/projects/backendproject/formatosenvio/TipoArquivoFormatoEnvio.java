@@ -6,6 +6,7 @@ public class TipoArquivoFormatoEnvio {
 
 	private String codigoAdministrador;
 	private TipoArquivoPermitido tipoArquivoPermitido;
+	
 	public String getCodigoAdministrador() {
 		return codigoAdministrador;
 	}

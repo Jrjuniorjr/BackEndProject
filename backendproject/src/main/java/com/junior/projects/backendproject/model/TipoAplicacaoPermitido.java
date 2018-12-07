@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 import lombok.*;
 @Entity()
-@Table(name = "Operador")
+@Table(name = "TipoAplicacaoPermitido")
 public class TipoAplicacaoPermitido {
 	@Id 
 	@Column (name = "id")
@@ -14,9 +14,6 @@ public class TipoAplicacaoPermitido {
 	@Column (name = "nomeTipoArquivoPermitido")
 	private String nomeTipoAplicacao;
 	
-	@Enumerated(EnumType.STRING)
-	@Column(name="tipo", columnDefinition="enum('Ativo', 'Inativo')")
-	private StatusAtivacao statusAtivacao;
 
 	public Integer getId() {
 		return id;
@@ -34,13 +31,6 @@ public class TipoAplicacaoPermitido {
 		this.nomeTipoAplicacao = nomeTipoAplicacao;
 	}
 
-	public StatusAtivacao getStatusAtivacao() {
-		return statusAtivacao;
-	}
-
-	public void setStatusAtivacao(StatusAtivacao statusAtivacao) {
-		this.statusAtivacao = statusAtivacao;
-	}
 	
 	
 	

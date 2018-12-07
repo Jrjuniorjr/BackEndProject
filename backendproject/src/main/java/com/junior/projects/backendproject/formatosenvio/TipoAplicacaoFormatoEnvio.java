@@ -5,6 +5,7 @@ import com.junior.projects.backendproject.model.TipoAplicacaoPermitido;
 public class TipoAplicacaoFormatoEnvio {
 	private String codigoAdministrador;
 	private TipoAplicacaoPermitido tipoAplicacaoPermitido;
+	
 	public String getCodigoAdministrador() {
 		return codigoAdministrador;
 	}

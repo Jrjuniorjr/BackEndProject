@@ -18,8 +18,11 @@ public class ConfiguracaoPermissaoController {
 	private ConfiguracaoPermissaoService configuracaoPermissaoService; 
 	
 	@PostMapping("/adicionarPermissao")
-	public ResponseEntity<String> adicionarPermissao(@RequestBody ConfiguracaoPermissaoFormatoEnvio permissaoObject){
+	public ResponseEntity<String> adicionarPermissao(
+			@RequestBody ConfiguracaoPermissaoFormatoEnvio permissaoObject){
+		
 		return configuracaoPermissaoService.adicionarPermissao(permissaoObject);
+	
 	}
 	
 	

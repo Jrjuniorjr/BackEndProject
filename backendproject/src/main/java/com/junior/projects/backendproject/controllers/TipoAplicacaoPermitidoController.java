@@ -22,14 +22,22 @@ public class TipoAplicacaoPermitidoController {
 	private TipoAplicacaoPermitidoService tipoAplicacaoPermitidoService;
 	
 	@PostMapping("/adicionarTipoAplicacaoPermitido")
-	public ResponseEntity<String> adicionarTipoAplicacaoPermitido(@RequestBody TipoAplicacaoFormatoEnvio tipoAplicacaoFormatoEnvio){
+	public ResponseEntity<String> adicionarTipoAplicacaoPermitido(
+			@RequestBody TipoAplicacaoFormatoEnvio tipoAplicacaoFormatoEnvio){
+	
 		return tipoAplicacaoPermitidoService.salvarTipoAplicacaoPermitido(tipoAplicacaoFormatoEnvio);
+	
 	}
 	
 	@GetMapping("listarTodosArquivos")
 	public ResponseEntity<List<TipoAplicacaoPermitido>> listarTodasAplicacao(){
-		List<TipoAplicacaoPermitido> tiposAplicacoes = tipoAplicacaoPermitidoService.listarTodostiposAplicacaoPermitidos();
+		
+		List<TipoAplicacaoPermitido> tiposAplicacoes = tipoAplicacaoPermitidoService.
+		
+				listarTodostiposAplicacaoPermitidos();
+	
 		return ResponseEntity.ok(tiposAplicacoes);
+	
 	}
 
 }

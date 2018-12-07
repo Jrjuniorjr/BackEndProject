@@ -20,7 +20,8 @@ public class OperadorService {
 	}
 	
 	public ResponseEntity salvarOperador(OperadorFormatoEnvio operadorFormatoEnvio) {
-		Operador administrador = iOperadorDAO.findByCodigo(operadorFormatoEnvio.getCodigoAdministrador());
+		Operador administrador = iOperadorDAO.findByCodigo(operadorFormatoEnvio.
+				getCodigoAdministrador());
 		if(administrador == null) {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
 		}
