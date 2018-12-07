@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.persistence.*;
 
-import lombok.*;
 
 @Entity()
 @Table(name = "Operador")

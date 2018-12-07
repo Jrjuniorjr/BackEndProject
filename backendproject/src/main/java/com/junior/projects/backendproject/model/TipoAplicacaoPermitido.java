@@ -2,7 +2,6 @@ package com.junior.projects.backendproject.model;
 
 import javax.persistence.*;
 
-import lombok.*;
 @Entity()
 @Table(name = "TipoAplicacaoPermitido")
 public class TipoAplicacaoPermitido {

@@ -5,7 +5,6 @@ import java.util.List;
 import com.junior.projects.backendproject.model.TipoAplicacaoPermitido;
 import com.junior.projects.backendproject.model.TipoArquivoPermitido;
 
-import lombok.*;
 
 public class ConfiguracaoPermissaoFormatoEnvio {
 	
