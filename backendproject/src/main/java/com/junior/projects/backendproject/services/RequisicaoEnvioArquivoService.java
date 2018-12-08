@@ -55,17 +55,24 @@ public class RequisicaoEnvioArquivoService {
 
 	}
 
-	public HttpEntity processamentoArquivo(String nomeArquivo) throws IOException{
+	public HttpEntity processamentoArquivo(String nomeArquivo, String codigoOperador, String nomeTipoAplicacao)
+			throws IOException {
 		arquivo = iArquivoDAO.findByNomeArquivo(nomeArquivo);
-		byte planilhaExcel[] = criarPlanilha();
-		HttpHeaders httpHeaders = new HttpHeaders();
-		httpHeaders
-				.setContentType(new MediaType("application", "vnd.openxmlformats-officedocument.spreadsheetml.sheet"));
-		httpHeaders.set(HttpHeaders.CONTENT_DISPOSITION,
-				"attachment;filename=" + arquivo.getNomeArquivo() + "PlanilhaExcel");
-		httpHeaders.setContentLength(planilhaExcel.length);
-		return new HttpEntity<>(planilhaExcel, httpHeaders);
+		Operador operador = operadorService.consultarOperadorPorCodigo(codigoOperador);
+		if (!verificarPermissaoEnvio(operador, nomeTipoAplicacao,
+				arquivo.getTipoArquivoPermitido().getNomeTipoArquivoPermitido())) {
+			return new HttpEntity<>(null);
 
+		} else {
+			byte planilhaExcel[] = criarPlanilha();
+			HttpHeaders httpHeaders = new HttpHeaders();
+			httpHeaders.setContentType(
+					new MediaType("application", "vnd.openxmlformats-officedocument.spreadsheetml.sheet"));
+			httpHeaders.set(HttpHeaders.CONTENT_DISPOSITION,
+					"attachment;filename=" + arquivo.getNomeArquivo() + "PlanilhaExcel");
+			httpHeaders.setContentLength(planilhaExcel.length);
+			return new HttpEntity<>(planilhaExcel, httpHeaders);
+		}
 	}
 
 	private byte[] criarPlanilha() throws IOException {

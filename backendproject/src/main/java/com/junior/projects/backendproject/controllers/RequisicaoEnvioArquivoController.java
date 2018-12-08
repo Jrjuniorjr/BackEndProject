@@ -35,8 +35,9 @@ public class RequisicaoEnvioArquivoController {
 	}
 	
 	@PostMapping("/processamentoArquivo")
-	public HttpEntity processamentoArquivo(@RequestBody String nomeArquivo) throws IOException {
-		return requisicaoEnvioArquivoService.processamentoArquivo(nomeArquivo);
+	public HttpEntity processamentoArquivo(@RequestParam String nomeArquivo,
+			@RequestParam("codigoOperador") String codigoOperador, @RequestParam("nomeTipoAplicacao") String nomeTipoAplicacao) throws IOException {
+		return requisicaoEnvioArquivoService.processamentoArquivo(nomeArquivo, codigoOperador, nomeTipoAplicacao);
 	}
 	
 }
