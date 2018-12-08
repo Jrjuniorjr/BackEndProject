@@ -26,7 +26,7 @@ public class OperadorController {
 	
 	}
 	
-	@PostMapping("consultarOperador")
+	@PostMapping("/consultarOperador")
 	public ResponseEntity<Operador> consultarOperador(@RequestBody String codigo){
 		Operador operador = operadorService.consultarOperadorPorCodigo(codigo);
 		return ResponseEntity.ok(operador);

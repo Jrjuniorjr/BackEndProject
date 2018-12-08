@@ -29,7 +29,7 @@ public class TipoAplicacaoPermitidoController {
 	
 	}
 	
-	@GetMapping("listarTodosArquivos")
+	@GetMapping("/listarTodosTiposAplicacoes")
 	public ResponseEntity<List<TipoAplicacaoPermitido>> listarTodasAplicacao(){
 		
 		List<TipoAplicacaoPermitido> tiposAplicacoes = tipoAplicacaoPermitidoService.
