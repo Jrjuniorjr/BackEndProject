@@ -36,7 +36,7 @@ public class Arquivo {
 	@Lob
 	private byte[] arquivoBytes;
 	
-	@Column(name = "nomeArquivo")
+	@Column(name = "nomeArquivo", unique=true)
 	private String nomeArquivo;
 	
 	public Integer getId() {
