@@ -49,7 +49,7 @@ TipoAplicacaoPermitidoController
     1.1 - path("/adicionarTipoAplicacaoPermitido")
     1.2 - Tipos de parametros enviados: @RequestBody TipoAplicacaoFormatoEnvio tipoAplicacaoFormatoEnvio
     2 - listas todas as aplicacoes
-    2.1 - path("/listarTodasTiposAplicacoes")
+    2.1 - path("/listarTodosTiposAplicacoes")
     2.2 - Tipos de parametros enviados: 
     
     
@@ -59,14 +59,14 @@ TipoAplicacaoPermitidoController
     1.1 - path("/adicionarTipoArquivoPermitido")
     1.2 - Tipos de parametros enviados: @RequestBody TipoArquivoFormatoEnvio tipoArquivoFormatoEnvio
   2 - listar todos os arquivos
-    2.1 - path("/listarTodosArquivos")
+    2.1 - path("/listarTodosTiposArquivos")
     2.2 - Tipos de parametros enviados: 
     
 ConfiguracaoPermissaoFormatoEnvio {
 	string codigoOperador;
 	String codigoAdministrador;
 	List<TipoAplicacaoPermitido> tipoAplicacaoPermitidos;
-  List<TipoArquivoPermitido> tiposArquivosPermitidos;
+        List<TipoArquivoPermitido> tiposArquivosPermitidos;
 	}
   
  OperadorFormatoEnvio {
