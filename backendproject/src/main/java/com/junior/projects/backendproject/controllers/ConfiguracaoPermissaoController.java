@@ -11,7 +11,7 @@ import com.junior.projects.backendproject.formatosenvio.ConfiguracaoPermissaoFor
 import com.junior.projects.backendproject.services.ConfiguracaoPermissaoService;
 
 @RestController
-@RequestMapping("configuracaoPermissao/")
+@RequestMapping("/configuracaoPermissao")
 public class ConfiguracaoPermissaoController {
 
 	@Autowired
